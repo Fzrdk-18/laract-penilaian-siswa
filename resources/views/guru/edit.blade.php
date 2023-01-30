@@ -2,7 +2,7 @@
 @section('content')
     <center>
         <br>
-        <h2>UBAH DATA GURU</h2>
+        <h2>EDIT DATA GURU</h2>
         @if (session('session'))
         <p class="text-success">{{ session('success') }}</p>
         @endif
@@ -37,7 +37,7 @@
                 </tr>
                 <tr>
                     <td width="25%">Password</td>
-                    <td width="25%"><input type="password" name="password" {{ $guru->password }}></td>
+                    <td width="25%"><input type="text" name="password" value="{{ $guru->password }}"></td>
                 </tr>
                 <tr>
                     <td colspan="2">

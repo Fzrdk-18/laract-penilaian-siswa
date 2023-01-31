@@ -12,6 +12,7 @@ use App\Http\Controllers\MapelController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\MengajarController;
+use App\Http\Controllers\NilaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,7 @@ use App\Http\Controllers\MengajarController;
         Route::post('/update/{kelas}', [KelasController::class, 'update']);
         Route::get('/destroy/{kelas}', [KelasController::class, 'destroy']);
     });
+
     Route::prefix('/siswa')->group(function() {
         Route::get('/index', [SiswaController::class, 'index']);
         Route::get('/create', [SiswaController::class, 'create']);
@@ -75,6 +77,7 @@ use App\Http\Controllers\MengajarController;
         Route::post('/update/{siswa}', [SiswaController::class, 'update']);
         Route::get('/destroy/{siswa}', [SiswaController::class, 'destroy']);
     });
+
     Route::prefix('/mengajar')->group(function() {
         Route::get('/index', [MengajarController::class, 'index']);
         Route::get('/create', [MengajarController::class, 'create']);
@@ -84,14 +87,15 @@ use App\Http\Controllers\MengajarController;
         Route::get('/destroy/{mengajar}', [MengajarController::class, 'destroy']);
     });
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+    Route::prefix('/nilai')->group(function() {
+        Route::get('/index', [NilaiController::class, 'index']);
+        Route::get('/create', [NilaiController::class, 'create']);
+        Route::post('/store', [NilaiController::class, 'store']);
+        Route::get('/edit/{nilai}', [NilaiController::class, 'edit']);
+        Route::post('/update/{nilai}', [NilaiController::class, 'update']);
+        Route::get('/destroy/{nilai}', [NilaiController::class, 'destroy']);
+    });
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -104,3 +108,15 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+

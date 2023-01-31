@@ -13,7 +13,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="bar">Nama Guru</td>X
+                    <td class="bar">Nama Guru</td>
                     <td class="bar">
                         <input type="text" name="nama_guru">
                     </td>

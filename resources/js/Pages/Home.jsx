@@ -4,8 +4,8 @@ import "../../css/style.css";
 import Layout from "../Pages/Main/Layout.jsx";
 
 const Home = () => {
-    // const { user } = usePage().props.auth;
-    // console.log("USER", user);
+    const { user } = usePage().props.auth;
+    console.log("USER", user);
     return(
         <>
             <Layout>
@@ -13,7 +13,7 @@ const Home = () => {
                     <b>
                         <br />
                         SELAMAT DATANG USER DENGAN HAK AKSES MASUK{" "}
-                        {/* {user.kode_admin ?? user.nis ?? user.nip} */}
+                        {user.kode_admin ?? user.nis ?? user.nip}
                     </b>
                 </center>
             </Layout>

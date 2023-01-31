@@ -68,7 +68,7 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(siswa $siswa)
     {
         return view('siswa.edit',[
             'siswa' => $siswa,
@@ -83,7 +83,7 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, siswa $siswa)
     {
         $data_siswa = $request->validate([
             'nis' => ['required', 'numeric'],
@@ -93,7 +93,7 @@ class SiswaController extends Controller
             'kelas_id' => ['required'],
             'password' => ['required']
         ]);
-        Siswa::update($data_siswa);
+        $siswa->update($data_siswa);
         return redirect('/siswa/index')->with('success','Data Siswa Berhasil di Ubah');
     }
 

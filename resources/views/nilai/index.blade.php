@@ -12,8 +12,8 @@
             @endif
             <table cellpadding="10">
                     <td>NO</td>
-                    <td>NAMA SISWA</td>
                     <td>GURU MAPEL</td>
+                    <td>NAMA SISWA</td>
                     <td>UTS</td>
                     <td>UH</td>
                     <td>UAS</td>

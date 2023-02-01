@@ -16,7 +16,7 @@ class NilaiController extends Controller
                 $query->where('guru_id', session('user')->id);
             })->get();
         }   else {
-                $nilai = Nilai::where('nis', session('user')->nis)->get();
+                $nilai = Nilai::where('siswa_id', session('user')->id)->get();
         }
         return view('nilai.index', ['nilai' => $nilai]);
     }

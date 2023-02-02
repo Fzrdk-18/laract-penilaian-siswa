@@ -10,7 +10,7 @@
             @if (session('success'))
                 <p class="text-success">{{ session('success') }}</p>
             @endif
-            <table cellpadding="10"
+            <table cellpadding="10">
                     <td>NO</td>
                     <td>GURU MAPEL</td>
                     <td>NAMA SISWA</td>
